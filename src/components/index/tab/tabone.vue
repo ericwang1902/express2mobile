@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import ReceiveCell from './receivecell/receivecell'
-import SendCell from './sendcell/sendcell'
+import ReceiveCell from '../receivecell/receivecell'
+import SendCell from '../sendcell/sendcell'
 
 export default {
   name: 'receiveform',

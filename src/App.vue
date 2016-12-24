@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import XIndex from 'components/index/index'
+import XIndex from 'components/index/tab/tabone'
 
 export default {
   name: 'app',
