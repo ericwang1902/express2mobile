@@ -1,6 +1,6 @@
 <template>
   <div class="button-sp-area">
-    <a href="javascript:;" class="weui-btn weui-btn_warn">提交</a>
+    <a @click="submitOrder" class="weui-btn weui-btn_warn">提交</a>
   </div>
 </template>
 
@@ -10,6 +10,11 @@ export default {
   data () {
     return {
       msg: 'Hello Vue 2.0!'
+    }
+  },
+  methods:{
+    submitOrder:function(){
+      console.log("提交订单！")
     }
   }
 }

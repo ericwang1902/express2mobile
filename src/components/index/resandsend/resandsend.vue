@@ -1,5 +1,5 @@
 <template>
-  <div class="weui-cells weui-cell_access">
+  <div class="weui-cells">
     <receive-cell></receive-cell>
     <send-cell></send-cell>
   </div>

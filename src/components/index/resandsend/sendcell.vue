@@ -1,5 +1,5 @@
 <template>
-        <a @click="ShowSendForm" class="weui-cell  weui-media-box weui-media-box_appmsg">
+        <a @click="ShowSendForm" class="weui-cell weui-cell_access weui-media-box weui-media-box_appmsg">
             <div class="weui-media-box__hd">
                 <div class="reciver_icon">寄</div>
             </div>
