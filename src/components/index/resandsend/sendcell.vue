@@ -1,10 +1,10 @@
 <template>
-        <a @click="ShowSendForm" class="weui-cell weui_media_box weui_media_appmsg">
-            <div class="weui_media_hd">
+        <a @click="ShowSendForm" class="weui-cell  weui-media-box weui-media-box_appmsg">
+            <div class="weui-media-box__hd">
                 <div class="reciver_icon">寄</div>
             </div>
-            <div class="weui_media_bd">
-                <h4 class="weui_media_title">寄件人信息</h4>
+            <div class="weui-media-box__bd">
+                <h4 class="weui-media-box__title">寄件人信息</h4>
                 <div id="sender_info">
                         <div class="desc_area">
 				            <span class="desc_title">测试 测试</span>
@@ -17,14 +17,14 @@
                         </div>
                 </div>
             </div>
-            <div class="weui_cell_ft">
+            <div class="weui-cell__ft">
             </div>
         </a>
 </template>
 
 <script>
 export default {
-  name: 'receiveform',
+  name: 'sendcell',
   data () {
     return {
       addressData:"AddressChinaData"
@@ -36,7 +36,7 @@ export default {
       }
   },
   components:{
-       
+
   }
 }
 </script>

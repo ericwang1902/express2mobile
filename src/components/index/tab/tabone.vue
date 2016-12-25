@@ -1,33 +1,38 @@
 <template>
-    <div class="weui_cells weui_cells_access">
-        <receive-cell></receive-cell>
-        <send-cell></send-cell>
-    </div>
+  <div>
+    <re-and-send></re-and-send>
+    <des-and-note></des-and-note>
+    <choose-company></choose-company>
+    <x-button></x-button>
+  </div>
 </template>
 
 <script>
-import ReceiveCell from '../receivecell/receivecell'
-import SendCell from '../sendcell/sendcell'
+import ReAndSend from  '../resandsend/resandsend'
+import DesAndNote from  '../desandnote/desandnote'
+import ChooseCompany from '../choosecompany/choosecompany'
+import XButton from '../button/xbutton'
 
 export default {
-  name: 'receiveform',
+  name: 'tabone',
   data () {
     return {
       addressData:"AddressChinaData"
     }
   },
   components:{
-       ReceiveCell,
-       SendCell
+       ReAndSend,
+       DesAndNote,
+       ChooseCompany,
+       XButton
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-        body {
-            margin: auto;
-            background-color: #f5f5f5
-        }
-       
+     body {
+       margin: auto;
+       background-color: #f5f5f5
+     }
 </style>
