@@ -6,6 +6,9 @@ import VueRouter from 'vue-router'
 
 import XIndex from 'components/index/tab/tabone'
 
+import ReceiveForm from 'components/forms/receiveform/receiveform'
+import ChooseReceiver from 'components/forms/chooseaddress/choosereceiver'
+
 Vue.use(VueRouter)
 
 // /* eslint-disable no-new */
@@ -24,7 +27,14 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/', component: App,
     children:[
-      { path: 'index', component: XIndex }
+      { path: 'index', component: XIndex },
+      { path: 'receiveform', component: ReceiveForm},
+    ]
+  },
+  {
+    path:'/addressbook',component:App,
+    children:[
+      {path:'addresslist',component:ChooseReceiver}
     ]
   }
 ]

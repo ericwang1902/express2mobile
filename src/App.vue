@@ -17,7 +17,7 @@
               </div>
               <p class="weui-tabbar__label">查快递</p>
             </router-link>
-            <router-link to="/addresslist" class="weui-tabbar__item" :class="{'weui-bar__item_on':isActive==3}">
+            <router-link to="/addressbook/addresslist" class="weui-tabbar__item" :class="{'weui-bar__item_on':isActive==3}">
               <div class="weui-tabbar__icon">
                 <img src="./assets/icon_nav_toast.png" alt="">
               </div>
@@ -59,7 +59,7 @@ export default {
           case "/orderlist":
             return 2;
             break;
-          case "/addresslist":
+          case "/addressbook/addresslist":
             return 3;
             break;
           case "/settings":
