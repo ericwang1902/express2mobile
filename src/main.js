@@ -27,14 +27,14 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/', component: App,
     children:[
-      { path: 'index', component: XIndex },
-      { path: 'receiveform', component: ReceiveForm},
+      { path: 'index', component: XIndex }
     ]
   },
   {
     path:'/addressbook',component:App,
     children:[
-      {path:'addresslist',component:ChooseReceiver}
+      {path:'addresslist',component:ChooseReceiver},
+      { path: 'receiveform', component: ReceiveForm}
     ]
   }
 ]

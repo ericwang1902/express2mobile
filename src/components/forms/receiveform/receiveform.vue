@@ -36,6 +36,17 @@
                     </div>
             </div>
         </div>
+        <div class="weui-cells weui-cells_checkbox">
+            <label class="weui-cell weui-check__label" for="s11">
+                <div class="weui-cell__hd">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="s11" checked="checked">
+                    <i class="weui-icon-checked"></i>
+                </div>
+                <div class="weui-cell__bd">
+                    <p>立即寄件</p>
+                </div>
+            </label>
+        </div>
           <div class="button-sp-area">
                 <a @click="submitOrder" class="weui-btn weui-btn_primary">保存</a>
           </div>
@@ -65,7 +76,9 @@ export default {
         console.log(region)
       },
       submitOrder:function(){
-      console.log("提交订单！")
+        console.log("提交订单！")
+       this.$router.push('/index');
+
       }
   }
 }

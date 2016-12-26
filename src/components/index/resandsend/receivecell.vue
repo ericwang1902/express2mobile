@@ -33,6 +33,7 @@ export default {
   methods:{
       ShowReceiveForm:function(){
           console.log("弹出收件人的输入框")
+          this.$router.push('/addressbook/addresslist');
       }
   },
   components:{

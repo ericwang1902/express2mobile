@@ -1,18 +1,35 @@
 <template>
     <div style="height:100%">
-        <search @on-submit="onSubmit" :auto-fixed="autoFixed"></search>
-        <div class="box">
-            <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_primary" style="margin-left:10px">添加</a>
+        <div class="box weui-navbar">
+            <router-link to="/addressbook/receiveform" class="weui-btn weui-btn_mini weui-btn_primary" style="margin-left:10px">添加</router-link>
             <div class="weui-cells__title">收件人地址</div>
             <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_warn" style="margin-right:0px">确认</a>
         </div>
-        <div class="weui-cells weui-cells_radio" style="height:100%">
-                <divider>上拉刷新</divider>
-                    <scroller lock-x scrollbar-y use-pullup :pullup-config="pullupConfig2"  @pullup:loading="load2">
-                    <div class="box2">
-                       
+        <div class="weui-cells weui-cells_radio" style="margin-top:50px;">
+            
+            <label v-for="item in items" class="weui-cell weui-check__label" :for="'id'+item">
+                <div class="weui-cell__bd">
+
+                     <div id="receiver_info">
+                            <div class="desc_area">
+                                <span class="desc_title">张三 17798885277</span>
+                            </div>
+                            <div class="desc_area">
+                                <span class="desc">江苏省南通市如皋市</span>
+                            </div>
+                            <div class="desc_area">
+                                <span class="desc">如城镇海阳路195号</span>
+                            </div>
                     </div>
-                </scroller>
+
+                </div>
+                <div class="weui-cell__ft">
+                    <input type="radio" class="weui-check" name="radio1" :id="'id'+item">
+                    <span class="weui-icon-checked"></span>
+                </div>
+            </label>
+            
+
         </div>
         
     </div>
@@ -20,23 +37,15 @@
 </template>
 
 <script>
-import { Search,Scroller, Divider, Spinner } from 'vuxx/src/components'
+import { Search, Divider, Spinner,Radio,Group } from 'vuxx/src/components'
 
 export default {
   name: 'hello',
   data () {
     return {
       msg: '这是广告页面',
-      results: [],
-      autoFixed: false,
-      pullupConfig2: {
-        content: '上拉加载更多',
-        downContent: '松开进行加载',
-        upContent: '上拉加载更多',
-        loadingContent: '加载中...'
-      },
-      n2: 10,
-      picked:""
+      items:[1,2,3,4,5,6,7]
+
     }
   },
   computed:{
@@ -45,15 +54,15 @@ export default {
       }
   },
   components:{
-      Search,
-      Scroller, Divider, Spinner
+      Search, 
+      Divider, 
+      Spinner,
+      Radio,
+      Group
   },
   methods: {
     resultClick (item) {
       alert('you click the result item: ' + JSON.stringify(item))
-    },
-    getResult (val) {
-      this.results = val ? getResult(this.value) : []
     },
     onSubmit (val) {
       alert('on submit' + val)
@@ -74,16 +83,7 @@ export default {
     }
   }
 }
-function getResult (val) {
-  let rs = []
-  for (let i = 0; i < 8; i++) {
-    rs.push({
-      title: `${val} result: ${i + 1} `,
-      other: i
-    })
-  }
-  return rs
-}
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -94,11 +94,29 @@ function getResult (val) {
   flex-direction: row;
   justify-content:space-between;
   align-items:center;
-  margin-top:10px;
   margin-right:10px;
 }
 .box2-wrap {
   height: 100%;
   overflow: hidden;
 }
+.desc_area{
+  display: flex;
+}
+        .desc_area .desc_title{
+            flex:1;
+            color: #000000;
+            font-size: 14px;
+            line-height: 1.2;
+            overflow: hidden;
+            text-overflow:ellipsis;
+        }
+        .desc_area .desc{
+            flex:1;
+            color: #999999;
+            font-size: 13px;
+            line-height: 1.2;
+            overflow: hidden;
+            text-overflow:ellipsis;
+        }
 </style>
