@@ -15,6 +15,7 @@ import SenderForm from 'components/forms/addressform/senderform'
 import ChooseSender from 'components/forms/chooseaddress/choosesender'
 
 import AddressList from 'components/index/tab/tabaddressbook'
+import ReceiverList from 'components/index/addressbook/receiverlist'
 
 import Settings from 'components/index/tab/settings'
 
@@ -43,11 +44,11 @@ const routes = [
   {
     path: '/addressbook', component: App,
     children: [
-      { path: 'receiverlist', component: ChooseReceiver },
-      { path: 'receiveform', component: ReceiveForm },
-      { path: 'senderlist', component: ChooseSender },
-      { path: 'senderform', component: SenderForm },
-      { path: 'addresslist', component: AddressList }
+      { path: 'receiverlist', component: ReceiverList,meta: {title: '收件人地址列表'}},
+      { path: 'receiveform', component: ReceiveForm,meta: {title: '新增收件人地址'} },
+      { path: 'senderlist', component: ChooseSender ,meta: {title: '寄件地址列表'}},
+      { path: 'senderform', component: SenderForm ,meta: {title: '新增寄件地址'}},
+      { path: 'addresslist', component: AddressList ,meta: {title: '地址簿'}}
     ]
   },
   {
@@ -62,6 +63,10 @@ const routes = [
 // 你还可以传别的配置参数, 不过先这么简单着吧。
 const router = new VueRouter({
   routes // （缩写）相当于 routes: routes
+})
+
+router.afterEach(route => {
+	document.title = route.meta.title;
 })
 
 // 4. 创建和挂载根实例。
