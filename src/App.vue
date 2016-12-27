@@ -23,7 +23,7 @@
               </div>
               <p class="weui-tabbar__label">地址库</p>
             </router-link>
-            <router-link to="/settings" class="weui-tabbar__item" :class="{'weui-bar__item_on':isActive==4}">
+            <router-link to="/settings/center" class="weui-tabbar__item" :class="{'weui-bar__item_on':isActive==4}">
               <div class="weui-tabbar__icon">
                 <img src="./assets/icon_nav_dialog.png" alt="">
               </div>
@@ -62,7 +62,7 @@ export default {
           case "/addressbook/addresslist":
             return 3;
             break;
-          case "/settings":
+          case "/settings/center":
             return 4;
             break;
         }

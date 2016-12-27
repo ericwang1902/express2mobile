@@ -14,6 +14,10 @@ import ChooseReceiver from 'components/forms/chooseaddress/choosereceiver'
 import SenderForm from 'components/forms/addressform/senderform'
 import ChooseSender from 'components/forms/chooseaddress/choosesender'
 
+import AddressList from 'components/index/tab/tabaddressbook'
+
+import Settings from 'components/index/tab/settings'
+
 Vue.use(VueRouter)
 
 // /* eslint-disable no-new */
@@ -42,7 +46,14 @@ const routes = [
       { path: 'receiverlist', component: ChooseReceiver },
       { path: 'receiveform', component: ReceiveForm },
       { path: 'senderlist', component: ChooseSender },
-      { path: 'senderform', component: SenderForm }
+      { path: 'senderform', component: SenderForm },
+      { path: 'addresslist', component: AddressList }
+    ]
+  },
+  {
+    path: '/settings', component: App,
+    children: [
+      { path: 'center', component: Settings }
     ]
   }
 ]

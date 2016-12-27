@@ -1,24 +1,32 @@
 <template>
     <div style="height:100%">
-        <div class="box weui-navbar">
-            <router-link to="/addressbook/senderform" class="weui-btn weui-btn_mini weui-btn_primary" style="margin-left:10px">添加</router-link>
-            <div class="weui-cells__title">寄件人地址</div>
-            <a href="javascript:;" class="weui-btn weui-btn_mini weui-btn_warn" style="margin-right:0px">确认</a>
+        <div class= "weui-navbar">
+            <div class="box1">
+                <div class="weui-cells__title">如果使用新地址，请点添加按钮。</div>
+            </div>
+            <div class="box2">
+                <div class="button-sp-area" style="margin:0px;">
+                <router-link to="/addressbook/senderform" class="weui-btn weui-btn_mini weui-btn_primary" >添加</router-link>
+                <a href="javascript:;" @click="ChangeShow" class="weui-btn weui-btn_mini weui-btn_warn" style="margin-right:10px">确认</a>
+            </div>
         </div>
-        <div class="weui-cells weui-cells_radio" style="margin-top:50px;">
+    
+       
+            <alert v-model="show" title="congratulations" @on-show="onShow" @on-hide="onHide">Message is sent successfully~</alert>
+            
+        </div>
+        <div class="weui-cells weui-cells_radio" style="margin-top:80px;">
             
             <label v-for="item in items" class="weui-cell weui-check__label" :for="'id'+item">
+             <img src="../../../assets/edit.png" style="height:20px;margin-right:20px;" alt="">
                 <div class="weui-cell__bd">
 
-                     <div id="sender_info">
+                     <div id="receiver_info">
                             <div class="desc_area">
-                                <span class="desc_title">张三 17798885277</span>
+                                <span class="desc_title">张三 1111111</span>
                             </div>
                             <div class="desc_area">
-                                <span class="desc">江苏省南通市如皋市</span>
-                            </div>
-                            <div class="desc_area">
-                                <span class="desc">如城镇海阳路195号</span>
+                                <span class="desc">1111111</span>
                             </div>
                     </div>
 
@@ -37,14 +45,15 @@
 </template>
 
 <script>
-import { Search, Divider, Spinner,Radio,Group } from 'vuxx/src/components'
+import { Search, Divider, Spinner,Radio,Group,Alert } from 'vuxx/src/components'
 
 export default {
   name: 'hello',
   data () {
     return {
       msg: '这是广告页面',
-      items:[1,2,3,4,5,6,7]
+      items:[1,2,3,4,5,6,7],
+      show:false
 
     }
   },
@@ -58,7 +67,8 @@ export default {
       Divider, 
       Spinner,
       Radio,
-      Group
+      Group,
+      Alert
   },
   methods: {
     resultClick (item) {
@@ -80,6 +90,16 @@ export default {
           }, 10)
         }
       }, 2000)
+    },
+    ChangeShow(){
+        this.show=true;
+        console.log(this.show)
+    },
+    onShow(){
+
+    },
+    onHide(){
+       console.log(this.show)
     }
   }
 }
@@ -88,13 +108,23 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.box {
+.box1 {
   display: -webkit-flex; /* Safari */
   display: flex;
   flex-direction: row;
   justify-content:space-between;
-  align-items:center;
+  align-items:right;
+  margin-left:10px;
+  width:100%;
+}
+.box2 {
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content:space-between;
+  align-items:right;
   margin-right:10px;
+  width:100%;
 }
 .box2-wrap {
   height: 100%;
