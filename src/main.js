@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 
+import store from './common/js/store'
+
 import XIndex from 'components/index/tab/tabone'
 
 import ReceiveForm from 'components/forms/receiveform/receiveform'
@@ -49,5 +51,6 @@ const router = new VueRouter({
 // 记得要通过 router 配置参数注入路由，
 // 从而让整个应用都有路由功能
 const app = new Vue({
-  router
+  router,
+  store 
 }).$mount('#app')

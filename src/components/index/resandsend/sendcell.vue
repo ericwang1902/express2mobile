@@ -7,13 +7,13 @@
                 <h4 class="weui-media-box__title">寄件人信息</h4>
                 <div id="sender_info">
                         <div class="desc_area">
-				            <span class="desc_title">测试 测试</span>
+                            <span class="desc_title">{{sender.name}} {{sender.phone}}</span>
                         </div>
                         <div class="desc_area">
-                            <span class="desc">北京市北京市市辖区东城区</span>
+                            <span class="desc">{{sender.province}} {{sender.city}} {{sender.county}} {{sender.district}}</span>
                         </div>
                         <div class="desc_area">
-                            <span class="desc">测试</span>
+                            <span class="desc">{{sender.detailAdd}}</span>
                         </div>
                 </div>
             </div>
@@ -29,6 +29,11 @@ export default {
     return {
       addressData:"AddressChinaData"
     }
+  },
+  computed:{
+      sender:function(){
+          return this.$store.getters.getSenderData
+      }
   },
   methods:{
       ShowSendForm:function(){

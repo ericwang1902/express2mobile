@@ -7,13 +7,13 @@
                 <h4 class="weui-media-box__title">收件人信息</h4>
                 <div id="receiver_info">
                         <div class="desc_area">
-				            <span class="desc_title"> </span>
+                            <span class="desc_title">{{receiver.name}} {{receiver.phone}}</span>
                         </div>
                         <div class="desc_area">
-                            <span class="desc"></span>
+                            <span class="desc">{{receiver.province}} {{receiver.city}} {{receiver.county}} {{receiver.district}}</span>
                         </div>
                         <div class="desc_area">
-                            <span class="desc"></span>
+                            <span class="desc">{{receiver.detailAdd}}</span>
                         </div>
                 </div>
             </div>
@@ -30,9 +30,16 @@ export default {
       addressData:"AddressChinaData"
     }
   },
+  computed:{
+    receiver:function(){
+        console.log(this.$store)
+         return this.$store.getters.getReceiverData;
+    }  
+  },
   methods:{
       ShowReceiveForm:function(){
           console.log("弹出收件人的输入框")
+          console.log(this)
           this.$router.push('/addressbook/addresslist');
       }
   },
