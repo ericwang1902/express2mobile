@@ -1,6 +1,6 @@
 <template>
     <div class="page panel js_show">
-        <div class="weui-cells__title">新增地址</div>
+        <div class="weui-cells__title">新增收件地址</div>
         <div class="weui-cells">
             <div class="weui_cell">
                 <div class="weui-cell__hd" style="width:50px"><label class="weui-label">省市区</label></div>
@@ -76,7 +76,7 @@ export default {
         console.log(region)
       },
       submitOrder:function(){
-        console.log("提交订单！")
+        console.log("增加收件人")
        this.$router.push('/index');
 
       }

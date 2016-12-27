@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'receiveform',
+  name: 'receivercell',
   data () {
     return {
       addressData:"AddressChinaData"
@@ -40,7 +40,7 @@ export default {
       ShowReceiveForm:function(){
           console.log("弹出收件人的输入框")
           console.log(this)
-          this.$router.push('/addressbook/addresslist');
+          this.$router.push('/addressbook/receiverlist');
       }
   },
   components:{

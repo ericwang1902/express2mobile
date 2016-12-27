@@ -38,6 +38,7 @@ export default {
   methods:{
       ShowSendForm:function(){
           console.log("弹出寄件人地址输入框")
+          this.$router.push('/addressbook/senderlist');
       }
   },
   components:{

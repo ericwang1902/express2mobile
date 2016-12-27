@@ -8,8 +8,11 @@ import store from './common/js/store'
 
 import XIndex from 'components/index/tab/tabone'
 
-import ReceiveForm from 'components/forms/receiveform/receiveform'
+import ReceiveForm from 'components/forms/addressform/receiveform'
 import ChooseReceiver from 'components/forms/chooseaddress/choosereceiver'
+
+import SenderForm from 'components/forms/addressform/senderform'
+import ChooseSender from 'components/forms/chooseaddress/choosesender'
 
 Vue.use(VueRouter)
 
@@ -27,16 +30,19 @@ Vue.use(VueRouter)
 // 或者，只是一个组件配置对象。
 // 我们晚点再讨论嵌套路由。
 const routes = [
-  { path: '/', component: App,
-    children:[
+  {
+    path: '/', component: App,
+    children: [
       { path: 'index', component: XIndex }
     ]
   },
   {
-    path:'/addressbook',component:App,
-    children:[
-      {path:'addresslist',component:ChooseReceiver},
-      { path: 'receiveform', component: ReceiveForm}
+    path: '/addressbook', component: App,
+    children: [
+      { path: 'receiverlist', component: ChooseReceiver },
+      { path: 'receiveform', component: ReceiveForm },
+      { path: 'senderlist', component: ChooseSender },
+      { path: 'senderform', component: SenderForm }
     ]
   }
 ]
@@ -52,5 +58,5 @@ const router = new VueRouter({
 // 从而让整个应用都有路由功能
 const app = new Vue({
   router,
-  store 
+  store
 }).$mount('#app')
