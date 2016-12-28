@@ -16,6 +16,7 @@ import ChooseSender from 'components/forms/chooseaddress/choosesender'
 
 import AddressList from 'components/index/tab/tabaddressbook'
 import ReceiverList from 'components/index/addressbook/receiverlist'
+import SenderList from 'components/index/addressbook/senderlist'
 
 import Settings from 'components/index/tab/settings'
 
@@ -38,17 +39,23 @@ const routes = [
   {
     path: '/', component: App,
     children: [
-      { path: 'index', component: XIndex }
+      { path: 'index', component: XIndex, meta: { title: '在线快递' } }
     ]
   },
   {
     path: '/addressbook', component: App,
     children: [
-      { path: 'receiverlist', component: ReceiverList,meta: {title: '收件人地址列表'}},
-      { path: 'receiveform', component: ReceiveForm,meta: {title: '新增收件人地址'} },
-      { path: 'senderlist', component: ChooseSender ,meta: {title: '寄件地址列表'}},
-      { path: 'senderform', component: SenderForm ,meta: {title: '新增寄件地址'}},
-      { path: 'addresslist', component: AddressList ,meta: {title: '地址簿'}}
+      { path: 'receiverlist', component: ReceiverList, meta: { title: '收件人地址列表' } },
+      { path: 'senderlist', component: SenderList, meta: { title: '寄件人地址列表' } },
+
+      { path: 'receiveform', component: ReceiveForm, meta: { title: '新增收件人地址' } },
+      { path: 'choosereceiver', component: ChooseReceiver, meta: { title: '选择收件人' } },
+
+      { path: 'senderform', component: SenderForm, meta: { title: '新增寄件地址' } },
+      { path: 'choosesender', component: ChooseSender, meta: { title: '寄件地址列表' } },
+
+
+      { path: 'addresslist', component: AddressList, meta: { title: '地址簿' } }
     ]
   },
   {
@@ -66,7 +73,7 @@ const router = new VueRouter({
 })
 
 router.afterEach(route => {
-	document.title = route.meta.title;
+  document.title = route.meta.title;
 })
 
 // 4. 创建和挂载根实例。

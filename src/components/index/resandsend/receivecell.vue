@@ -40,7 +40,7 @@ export default {
       ShowReceiveForm:function(){
           console.log("弹出收件人的输入框")
           console.log(this)
-          this.$router.push('/addressbook/receiverlist');
+          this.$router.push('/addressbook/choosereceiver');
       }
   },
   components:{

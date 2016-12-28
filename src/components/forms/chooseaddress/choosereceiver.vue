@@ -13,10 +13,9 @@
         
         <alert v-model="show" title="congratulations" @on-show="onShow" @on-hide="onHide">Message is sent successfully~</alert>
     </div>
-        <div class="weui-cells weui-cells_radio" style="margin-top:80px;">
-           
+        <div class="weui-cells weui-cells_radio" style="margin-top:80px;">           
             <label v-for="item in items" class="weui-cell weui-check__label" :for="'id'+item">
-             <img src="../../../assets/edit.png" style="height:20px;margin-right:20px;" alt="">
+            <!-- <img src="../../../assets/edit.png" style="height:20px;margin-right:20px;" alt=""> -->
                 <div class="weui-cell__bd">
 
                      <div id="receiver_info">
@@ -34,9 +33,8 @@
                     <span class="weui-icon-checked"></span>
                 </div>
             </label>
-            
-
         </div>
+        <div style="height:60px"></div>
         
     </div>
     

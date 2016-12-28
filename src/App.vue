@@ -40,10 +40,7 @@ export default {
   name: 'app1',
     data () {
     return {
-      isActive1: false,
-      isActive2:false,
-      isActive3:false,
-      isActive4:false
+      
     }
   },
   components: {
@@ -52,20 +49,20 @@ export default {
   computed:{
     isActive:function(){
       var path =this.$route.path;
-        switch(path){
-          case "/index":
-            return 1;
-            break;
-          case "/orderlist":
-            return 2;
-            break;
-          case "/addressbook/addresslist":
-            return 3;
-            break;
-          case "/settings/center":
-            return 4;
-            break;
-        }
+      console.log(path.search('/index'))
+      
+      if(path.search('/index')!==-1){
+        return 1;
+      }
+      if(path.search('/orderlist')!==-1){
+        return 2;
+      }
+      if(path.search('/addressbook')!==-1){
+        return 3;
+      }
+      if(path.search('/settings')!==-1){
+        return 4;
+      }
     }
   }
 }

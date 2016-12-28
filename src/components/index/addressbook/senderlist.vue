@@ -1,30 +1,27 @@
 <template>
     <div style="height:100%">
-        <div class= "weui-navbar">
+      <div class= "weui-navbar">
             <div class="box1">
                 <div class="weui-cells__title">如果使用新地址，请点添加按钮。</div>
+
             </div>
             <div class="box2">
-                <div class="button-sp-area" style="margin:0px;">
-                <router-link to="/addressbook/senderform" class="weui-btn weui-btn_mini weui-btn_primary" >添加</router-link>
-                <a href="javascript:;" @click="ChangeShow" class="weui-btn weui-btn_mini weui-btn_warn" style="margin-right:10px">确认</a>
+                <div class="button-sp-area" style="margin-top:15px;">
+                    <router-link to="/addressbook/receiveform" class="weui-btn weui-btn_mini weui-btn_primary" >添加</router-link>
+               </div>
             </div>
-        </div>
-            <alert v-model="show" title="congratulations" @on-show="onShow" @on-hide="onHide">Message is sent successfully~</alert>
-            
-        </div>
-        <div class="weui-cells weui-cells_radio" style="margin-top:80px;">
-            
-            <label v-for="item in items" class="weui-cell weui-check__label" :for="'id'+item">
-             <!--<img src="../../../assets/edit.png" style="height:20px;margin-right:20px;" alt="">-->
+      </div>
+        <alert v-model="show" title="congratulations" @on-show="onShow" @on-hide="onHide">Message is sent successfully~</alert>
+        <div style="margin-top:60px"></div>
+        <div  v-for="item in items" class="weui-cells" style="margin-top:1px;">
+            <div  class="weui-cell " :for="'id'+item">
                 <div class="weui-cell__bd">
-
                      <div id="receiver_info">
                             <div class="desc_area">
-                                <span class="desc_title">张三 1111111</span>
+                                <span class="desc_title">张三 17798885277</span>
                             </div>
                             <div class="desc_area">
-                                <span class="desc">1111111</span>
+                                <span class="desc">江苏省南通市如皋市如城镇海阳路195号</span>
                             </div>
                     </div>
 
@@ -33,11 +30,16 @@
                     <input type="radio" class="weui-check" name="radio1" :id="'id'+item">
                     <span class="weui-icon-checked"></span>
                 </div>
-            </label>
-            
-
+            </div>
+            <div class="weui-cell">
+                <div class="box3">
+                <img src="../../../assets/edit.png" style="height:20px;margin-right:20px;" alt="">
+                <img src="../../../assets/lj.png" style="height:20px;margin-right:20px;" alt="">
+                </div>
+            </div>
         </div>
-    <div style="height:60px"></div>
+        <div style="height:60px"></div>
+        
     </div>
     
 </template>
@@ -122,6 +124,15 @@ export default {
   justify-content:space-between;
   align-items:right;
   margin-right:10px;
+  width:100%;
+}
+.box3{
+  display: -webkit-flex; /* Safari */
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items:right;
+  margin-left:10px;
   width:100%;
 }
 .box2-wrap {
